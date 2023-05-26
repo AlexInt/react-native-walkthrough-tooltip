@@ -77,6 +77,7 @@ class Tooltip extends Component {
     topAdjustment: 0,
     horizontalAdjustment: 0,
     accessible: true,
+    onContentTap: () => { },
   };
 
   static propTypes = {
@@ -109,6 +110,7 @@ class Tooltip extends Component {
     topAdjustment: PropTypes.number,
     horizontalAdjustment: PropTypes.number,
     accessible: PropTypes.bool,
+    onContentTap: PropTypes.func,
   };
 
   constructor(props) {
@@ -422,6 +424,7 @@ class Tooltip extends Component {
       if (this.props.closeOnContentInteraction) {
         this.props.onClose();
       }
+      this.props.onContentTap();
     };
 
     return (
